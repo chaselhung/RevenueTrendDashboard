@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>收入趋势看板</title>
+
+  <!-- CDN: SheetJS + ECharts -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+
+  <!-- 本地 CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="panel left">
+      <header>
+        <h2>收入趋势看板</h2>
+        <div class="controls">
+          <label>选择 Excel：</label>
+          <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" />
+        </div>
+      </header>
+
+      <div class="filters">
+        <div class="small">排序方式：
+          <select id="sortMode">
+            <option value="desc" selected>按总收入降序</option>
+            <option value="asc">按总收入升序</option>
+          </select>
+        </div>
+        <div class="search">
+          <input id="txtFilter" placeholder="按客户名/经理筛选" />
+          <button id="btnReset">重置</button>
+        </div>
+      </div>
+
+      <div id="list" class="list">
+        <div class="no-data">请先上传 Excel 文件，系统将自动解析并展示排行榜。</div>
+      </div>
+
+      <div class="footer">
+        <div>提示：文件首张表将被读取，月份列会自动识别（例：2024年11月、2025-1、2024-11）。</div>
+      </div>
+    </div>
+
+    <div class="panel right">
+      <div class="top">
+        <div class="card info">
+          <div id="detailHeader"><div class="no-data">未选择客户</div></div>
+        </div>
+        <div class="card product-summary">
+          <div id="productSummary"><div class="no-data">选择客户后显示产品（天翼/宽带/固话/ITV）与月份明细。</div></div>
+        </div>
+      </div>
+
+      <div class="card chart-container">
+        <div id="chart" class="chart"></div>
+        <div id="tableContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 本地 JS -->
+  <script src="./js/main.js"></script>
+</body>
+</html>
