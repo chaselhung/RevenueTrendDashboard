@@ -1,3 +1,5 @@
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f464bc65-8f0a-4ca5-b8d3-5db18906fcf2" /><img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/62c54ca6-460e-403a-aea2-dc80a6de7d90" />
+
 # 收入趋势看板（Excel数据可视化）📊
 
 ## 项目简介
